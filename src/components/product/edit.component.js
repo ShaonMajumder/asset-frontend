@@ -14,6 +14,7 @@ export default function EditUser() {
 
   const [title, setTitle] = useState("")
   const [description, setDescription] = useState("")
+  const [amount, setAmount] = useState("")
   const [image, setImage] = useState(null)
   const [validationError,setValidationError] = useState({})
 
@@ -113,6 +114,16 @@ export default function EditUser() {
                             }}/>
                         </Form.Group>
                       </Col>
+                  </Row>
+                  <Row> 
+                      <Col>
+                        <Form.Group controlId="Name">
+                            <Form.Label>Amount</Form.Label>
+                            <Form.Control type="text" value={amount} onChange={(event)=>{
+                              setAmount(event.target.value)
+                            }}/>
+                        </Form.Group>
+                      </Col>  
                   </Row>
                   <Row>
                     <Col>

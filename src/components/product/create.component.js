@@ -27,6 +27,7 @@ export default function CreateProduct() {
 
     formData.append('title', title)
     formData.append('description', description)
+    formData.append('amount', amount)
     formData.append('image', image)
 
     await axios.post(`http://localhost:8000/api/products`, formData).then(({data})=>{
