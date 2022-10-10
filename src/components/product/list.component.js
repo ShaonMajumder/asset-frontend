@@ -56,7 +56,7 @@ export default function List() {
           <div className="row">
             <div className='col-12'>
                 <Link className='btn btn-primary mb-2 float-end' to={"/product/create"}>
-                    Create Product
+                    Create Asset
                 </Link>
             </div>
             <div className="col-12">

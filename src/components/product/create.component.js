@@ -56,7 +56,7 @@ export default function CreateProduct() {
         <div className="col-12 col-sm-12 col-md-6">
           <div className="card">
             <div className="card-body">
-              <h4 className="card-title">Create Product</h4>
+              <h4 className="card-title">Create Asset</h4>
               <hr />
               <div className="form-wrapper">
                 {

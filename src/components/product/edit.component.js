@@ -76,7 +76,7 @@ export default function EditUser() {
         <div className="col-12 col-sm-12 col-md-6">
           <div className="card">
             <div className="card-body">
-              <h4 className="card-title">Update Product</h4>
+              <h4 className="card-title">Update Asset</h4>
               <hr />
               <div className="form-wrapper">
                 {
