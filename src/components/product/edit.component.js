@@ -7,6 +7,8 @@ import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios';
 import Swal from 'sweetalert2';
 
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:8000"
+
 export default function EditUser() {
   const navigate = useNavigate();
 
@@ -23,7 +25,7 @@ export default function EditUser() {
   }, [])
 
   const fetchProduct = async () => {
-    await axios.get(`http://localhost:8000/api/products/${id}`).then(({data})=>{
+    await axios.get(API_URL+`/api/products/${id}`).then(({data})=>{
       const { title, description } = data.product
       setTitle(title)
       setDescription(description)
@@ -50,7 +52,7 @@ export default function EditUser() {
       formData.append('image', image)
     }
 
-    await axios.post(`http://localhost:8000/api/products/${id}`, formData).then(({data})=>{
+    await axios.post(API_URL+`/api/products/${id}`, formData).then(({data})=>{
       Swal.fire({
         icon:"success",
         text:data.message

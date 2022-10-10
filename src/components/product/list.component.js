@@ -4,6 +4,8 @@ import Button from 'react-bootstrap/Button'
 import axios from 'axios';
 import Swal from 'sweetalert2'
 
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:8000"
+
 export default function List() {
 
     const [products, setProducts] = useState([])
@@ -13,7 +15,7 @@ export default function List() {
     }, [])
 
     const fetchProducts = async () => {
-        await axios.get(`http://localhost:8000/api/products`).then(({data})=>{
+        await axios.get(API_URL+`/api/products`).then(({data})=>{
             setProducts(data)
         })
     }
@@ -35,7 +37,7 @@ export default function List() {
             return;
           }
 
-          await axios.delete(`http://localhost:8000/api/products/${id}`).then(({data})=>{
+          await axios.delete(API_URL+`/api/products/${id}`).then(({data})=>{
             Swal.fire({
                 icon:"success",
                 text:data.message
@@ -92,7 +94,7 @@ export default function List() {
                                                 <td>{row.description}</td>
                                                 <td>{row.amount}</td>
                                                 <td>
-                                                    <img width="50px" alt='' src={`http://localhost:8000/storage/product/image/${row.image}`} />
+                                                    <img width="50px" alt='' src={API_URL+`/storage/product/image/${row.image}`} />
                                                 </td>
                                                 <td>
                                                     <Link to={`/product/edit/${row.id}`} className='btn btn-success me-2'>

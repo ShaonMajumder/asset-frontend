@@ -32,3 +32,5 @@ npm install bootstrap
 npm install react-router-dom@5.0.0
 npm install axios --save
 npm install sweetalert --save
+
+npm install dotenv --save

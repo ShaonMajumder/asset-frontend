@@ -7,6 +7,8 @@ import axios from 'axios'
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom'
 
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:8000"
+
 export default function CreateProduct() {
   const navigate = useNavigate();
 
@@ -30,7 +32,7 @@ export default function CreateProduct() {
     formData.append('amount', amount)
     formData.append('image', image)
 
-    await axios.post(`http://localhost:8000/api/products`, formData).then(({data})=>{
+    await axios.post(API_URL+`/api/products`, formData).then(({data})=>{
       Swal.fire({
         icon:"success",
         text:data.message

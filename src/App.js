@@ -12,6 +12,8 @@ import EditProduct from "./components/product/edit.component";
 import ProductList from "./components/product/list.component";
 import CreateProduct from "./components/product/create.component";
 
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:8000"
+
 function App() {
   return (<Router>
     <Navbar bg="primary">
